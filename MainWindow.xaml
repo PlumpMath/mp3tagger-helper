@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Window x:Class="mp3Enhance.MainWindow" Title="tagRipper GUI" Height="350" Width="525" ResizeMode="NoResize"
+        Icon="utilities.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Button Margin="5,0,0,20" Height="60" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                Background="#FFFFFFFF" BorderThickness="0" Click="MainWindow_Loaded">
+            <Image Source="house4.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50"
+                   RenderOptions.BitmapScalingMode="HighQuality">
+                <Image.Effect>
+                    <DropShadowEffect Color="SkyBlue" ShadowDepth="2" Direction="270" BlurRadius="0" />
+                </Image.Effect>
+            </Image>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="tagRipper GUI" />
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="Karthik Nishanth" />
+        <Button Name="_askfile" Content=" Select file from your computer " Background="#FFFFFFFF" BorderThickness="2"
+                BorderBrush="#FF6A5ACD" FontFamily="Segoe UI Light" FontSize="30" Height="50"
+                VerticalAlignment="Center" HorizontalAlignment="Center" Click="_askfile_Click" />
+        <Grid Name="_askName">
+            <TextBlock Height="35" Text="Enter the song's title" VerticalAlignment="Top" HorizontalAlignment="Center"
+                       Margin="0,50,0,0" TextBlock.FontSize="24" TextBlock.FontFamily="Segoe UI Light" />
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Name="_titleField" Height="50" Width="350" HorizontalAlignment="Center" FontSize="34" Text=""
+                         FontFamily="Segoe UI SemiLight" KeyDown="_titleField_KeyDown" />
+                <Button Name="_fileNameOk" Height="50" Content=" Ok " Background="#FFFFFFFF" BorderThickness="2"
+                        BorderBrush="#FF6A5ACD" FontFamily="Segoe UI Light" FontSize="30" Click="_fileNameOk_Click" />
+            </StackPanel>
+        </Grid>
+        <Grid Name="_workArea" Opacity="0.1">
+            <ComboBox Name="_songdropdown" Height="25" VerticalAlignment="Top" Margin="0,20,0,0"
+                      SelectionChanged="_songdropdown_SelectionChanged">
+                <ComboBox.Effect>
+                    <DropShadowEffect BlurRadius="0" RenderOptions.BitmapScalingMode="HighQuality" Color="SkyBlue"
+                                      ShadowDepth="1" />
+                </ComboBox.Effect>
+            </ComboBox>
+            <Image Name="_picture" Height="150" Width="150" HorizontalAlignment="Left" Margin="10,0,0,0" />
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="180,0,0,0">
+                <TextBlock Name="_title" Height="35" Text="Title" TextBlock.FontSize="24" />
+                <TextBlock Name="_album" Height="35" Text="Album" TextBlock.FontSize="24"
+                           TextBlock.FontFamily="Segoe UI Light" />
+                <TextBlock Name="_artist" Height="35" Text="Artist" TextBlock.FontSize="24"
+                           TextBlock.FontFamily="Segoe UI Light" />
+                <TextBlock Name="_genre" Height="35" Text="Genre" TextBlock.FontSize="24"
+                           TextBlock.FontFamily="Segoe UI Light" />
+            </StackPanel>
+            <Button Name="_confirmTag" Margin="0,0,0,15" Content=" Merge this info to song " Background="#FFFFFFFF"
+                    BorderThickness="2" BorderBrush="#FF6A5ACD" FontFamily="Segoe UI Light" FontSize="30" Height="50"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="_confirmTag_Click" />
+        </Grid>
+    </Grid>
+</Window>
